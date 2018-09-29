@@ -1,8 +1,8 @@
 class CreateShows < ActiveRecord::Migration[5.2]
   def change
     create_table :shows do |t|
-      t.integer :audi_id
-      t.integer :movie_id
+      t.references :audi, index: true, foreign_key: true
+      t.references :movie, index: true, foreign_key: true
       t.time :time
       t.date :date
       t.integer :available_seats
