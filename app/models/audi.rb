@@ -1,10 +1,10 @@
 class Audi < ApplicationRecord
-	belongs_to :theatre
-	has_many :tickets, dependent: :destroy
-	has_many :shows, dependent: :destroy
-	has_many :movies, through: :shows
-	validates :number, :theatre_id, :no_of_seats, :price_of_seat, presence: true
-	validates :number, :no_of_seats, :price_of_seat, numericality: { only_integer: true }
+  belongs_to :theatre
+  has_many :tickets, dependent: :destroy
+  has_many :shows, dependent: :destroy
+  has_many :movies, through: :shows
+  validates :number, :theatre_id, :no_of_seats, :price_of_seat, presence: true
+  validates :number, :no_of_seats, :price_of_seat, numericality: { only_integer: true }
   validate :no_of_seats_is_valid
   validate :price_of_seat_is_valid
 

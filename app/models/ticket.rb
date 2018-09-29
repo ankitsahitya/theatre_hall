@@ -1,10 +1,10 @@
 class Ticket < ApplicationRecord
-	belongs_to :booking
+  belongs_to :booking
   belongs_to :audi
-	belongs_to :movie
-	validates :seat_no, :booking_id, :audi_id, :movie_id, :price, presence: true
-	validates :seat_no, numericality: { only_integer: true }
-	validates :price, numericality: true
+  belongs_to :movie
+  validates :seat_no, :booking_id, :audi_id, :movie_id, :price, presence: true
+  validates :seat_no, numericality: { only_integer: true }
+  validates :price, numericality: true
   validate :seat_no_is_valid
   validate :price_is_valid
 
